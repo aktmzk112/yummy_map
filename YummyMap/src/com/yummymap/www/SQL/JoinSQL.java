@@ -3,6 +3,7 @@ package com.yummymap.www.SQL;
 public class JoinSQL {
 	public final int CHECK_LOGIN = 1001;
 	public final int ADD_MEMB = 1002;
+	public final int ID_CHECK = 1003;
 	
 	public String getSQL(int code) {
 		StringBuffer buff = new StringBuffer();
@@ -23,6 +24,14 @@ public class JoinSQL {
 			buff.append("	getmno.nextval, ");
 			buff.append("	?,?,?,?,?,TO_DATE(?, 'YY/MM/DD'),?");
 			buff.append(")");
+			break;
+		case ID_CHECK:
+			buff.append("SELECT ");
+			buff.append("count(*) cnt ");
+			buff.append("FROM ");
+			buff.append("member ");
+			buff.append("WHERE ");
+			buff.append("mid=? ");
 			break;
 		}
 		return buff.toString();

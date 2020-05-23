@@ -26,26 +26,6 @@
             <div class="member_nav text-right mt-3">
                 <div class="ctQZg">
                     <div class="_47KiJ">
-                        <!--  <a href="#">
-                        <yt-icon class="guide-icon style-scope ytd-guide-entry-renderer"><svg viewBox="0 0 24 24"
-                                preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon"
-                                style="pointer-events: none; display: block; width: 100%; height: 100%;">
-                                <g fill-rule="evenodd" class="style-scope yt-icon">
-                                    <path
-                                        d="M22,13V8l-5-3l-5,3l0,0L7,5L2,8v5l10,6L22,13z M9,11H7v2H6v-2H4v-1h2V8h1v2h2V11z M15,13 c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S15.55,13,15,13z M18,11c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,11,18,11z"
-                                        class="style-scope yt-icon"></path>
-                                </g>
-                            </svg></a>
-                        </yt-icon>
-                        <div class="XrOey">
-                            <a href="#">
-                                <svg aria-label="사람 찾기" class="_8-yf5 " fill="#262626" height="24" viewBox="0 0 48 48"
-                                    width="24">
-                                    <path clip-rule="evenodd"
-                                        d="M24 0C10.8 0 0 10.8 0 24s10.8 24 24 24 24-10.8 24-24S37.2 0 24 0zm0 45C12.4 45 3 35.6 3 24S12.4 3 24 3s21 9.4 21 21-9.4 21-21 21zm10.2-33.2l-14.8 7c-.3.1-.6.4-.7.7l-7 14.8c-.3.6-.2 1.3.3 1.7.3.3.7.4 1.1.4.2 0 .4 0 .6-.1l14.8-7c.3-.1.6-.4.7-.7l7-14.8c.3-.6.2-1.3-.3-1.7-.4-.5-1.1-.6-1.7-.3zm-7.4 15l-5.5-5.5 10.5-5-5 10.5z"
-                                        fill-rule="evenodd">
-                                    </path>
-                                </svg></a></div>-->
                         <div class="XrOey"><a class="_0ZPOP kIKUG _4700r " href="#"><svg aria-label="활동 피드"
                                     class="_8-yf5 " fill="#262626" height="24" viewBox="0 0 48 48" width="24">
                                     <path
@@ -56,24 +36,23 @@
                                 <div class="poA5q" style="margin-left: -423px;"></div>
                             </div>
                         </div>
-                        <div class="XrOey"><a href="#"><svg aria-label="프로필" class="_8-yf5 " fill="#262626" height="24"
+                        <div class="XrOey"><a href="#" id="mypage"><svg aria-label="프로필" class="_8-yf5 " fill="#262626" height="24"
                                     viewBox="0 0 48 48" width="24">
                                     <path
                                         d="M24 26.7c7.4 0 13.4-6 13.4-13.4S31.4 0 24 0 10.6 6 10.6 13.4s6 13.3 13.4 13.3zM24 3c5.7 0 10.4 4.6 10.4 10.4S29.7 23.7 24 23.7s-10.4-4.6-10.4-10.4S18.3 3 24 3zm9.1 27.1H14.9c-7.4 0-13.4 6-13.4 13.4v3c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5v-3c0-5.7 4.6-10.4 10.4-10.4h18.3c5.7 0 10.4 4.6 10.4 10.4v3c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5v-3c-.1-7.4-6.1-13.4-13.5-13.4z">
                                     </path>
                                 </svg></a></div>
                     </div>
-                    <!-- <a href="#" class="badge badge-light nav-item" id="join">Join</a>-->
-                    <a href="#" class="badge badge-light nav-item" id="login">LOGIN</a>
-                    <a href="#" class="badge badge-light nav-item" id="logout">LOGOUT</a>
+                    <a href="/YummyMap/join/login.mmy" class="badge badge-light nav-item" id="login">LOGIN</a>
+                    <a href="/YummyMap/join/logoutProc.mmy" class="badge badge-light nav-item" id="logout">LOGOUT</a>
                 </div>
             </div>
         </div>
-        <a class="navbar-brand tcolor logo" href="#" id="">
+        <a class="navbar-brand tcolor logo" href="/YummyMap/main.mmy" id="">
             YUMMY MAP
         </a>
         <div class=" nav-item-1 d-flex justify-content-end">
-            <a class="navbar-brand nav-item-size" href="#" id="">
+            <a class="navbar-brand nav-item-size" href="/YummyMap/game/game.mmy" id="">
                 <i class="fas fa-gamepad"></i>
             </a>
             <a class="navbar-brand nav-item-size" href="#">
@@ -341,17 +320,30 @@
 </body>
 <script type="text/javascript" src="../js/jquery-3.5.0.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function () {
-        $(".heart").click(function () {
-            if ($(this).hasClass("liked")) {
-                $(this).html('<i class="far fa-heart" aria-hidden="true"></i>');
-                $(this).removeClass("liked");
-            } else {
-                $(this).html('<i class="fa fa-heart" aria-hidden="true"></i>');
-                $(this).addClass("liked");
-            }
-        });
+$(document).ready(function () {
+	//하트 이벤트처리 입니다.
+    $(".heart").click(function () {
+        if ($(this).hasClass("liked")) {
+            $(this).html('<i class="far fa-heart" aria-hidden="true"></i>');
+            $(this).removeClass("liked");
+        } else {
+            $(this).html('<i class="fa fa-heart" aria-hidden="true"></i>');
+            $(this).addClass("liked");
+        }
     });
+	
+	//로그인 여부를 확인합니다.
+	 let userid = '${sid}';
+	 if(!userid) {
+	  $('#login').show();
+	  $('#logout').hide();
+	  $('#mypage').attr('href', '/YummyMap/join/join.mmy');
+	 } else {
+	  $('#login').hide();
+	  $('#logout').show();
+	  $('#mypage').attr('href', '/YummyMap/member/mypage.mmy');
+	 }
+});
 </script>
 
 </html>

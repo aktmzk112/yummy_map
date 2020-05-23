@@ -5,13 +5,10 @@
 <head>
   <meta charset="utf-8">
 <link rel="stylesheet" href="/YummyMap/css/member/register.css">
-<link rel="stylesheet" href="/YummyMap/css/w3.css">
 <link rel="stylesheet" href="/YummyMap/css/nav.css">
 <link rel="stylesheet" href="/YummyMap/css/bootstrap.min.css">
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="/YummyMap/js/jquery-3.5.0.min.js"></script>
 
 </head>
 <style>
@@ -34,7 +31,7 @@
                           <div class="poA5q" style="margin-left: -423px;"></div>
                       </div>
                   </div>
-                  <div class="XrOey"><a href="#"><svg aria-label="프로필" class="_8-yf5 " fill="#262626" height="24"
+                  <div class="XrOey"><a href="/YummyMap/join/join.mmy"><svg aria-label="프로필" class="_8-yf5 " fill="#262626" height="24"
                               viewBox="0 0 48 48" width="24">
                               <path
                                   d="M24 26.7c7.4 0 13.4-6 13.4-13.4S31.4 0 24 0 10.6 6 10.6 13.4s6 13.3 13.4 13.3zM24 3c5.7 0 10.4 4.6 10.4 10.4S29.7 23.7 24 23.7s-10.4-4.6-10.4-10.4S18.3 3 24 3zm9.1 27.1H14.9c-7.4 0-13.4 6-13.4 13.4v3c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5v-3c0-5.7 4.6-10.4 10.4-10.4h18.3c5.7 0 10.4 4.6 10.4 10.4v3c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5v-3c-.1-7.4-6.1-13.4-13.5-13.4z">
@@ -42,8 +39,7 @@
                           </svg></a></div>
               </div>
               <!-- <a href="#" class="badge badge-light nav-item" id="join">Join</a>-->
-              <a href="#" class="badge badge-light nav-item" id="login">LOGIN</a>
-              <a href="#" class="badge badge-light nav-item" id="logout">LOGOUT</a>
+              <a href="/YummyMap/join/login.mmy" class="badge badge-light nav-item" id="login">LOGIN</a>
           </div>
       </div>
   </div>
@@ -75,9 +71,10 @@
       <form id="frm" action="/YummyMap/join/joinProc.mmy" method="POST">
         <div class="form-group">
           <label for="id" class="idlabel mr-2 d-inline-block">아이디</label>
-          <button type="button" class="btn btn-secondary btn-sm d-inline-block mb-1">아이디 체크</button>
+          <button type="button" id="idcheck" class="btn btn-secondary btn-sm d-inline-block mb-1">아이디 체크</button>
           <input type="text" class="form-control ckinput" id="id" name="id">
-          <small id="idmsg" class="text-danger">아이디 패턴을 확인해주세요</small>
+          <small id="idmsg1" class="text-danger dnone">아이디 패턴을 확인해주세요</small>
+          <small id="idmsg2" class="dnone"></small>
         </div>
         <div class="form-group">
           <label for="pw">비밀번호</label>
@@ -160,6 +157,7 @@
 </body>
 <script type="text/javascript">
 $(document).ready(function () {
+// 완료버튼 클릭시 이벤트를 진행합니다.
   $('#joinbtn').click(function(){
     let result = checkfrm();
     if(result == -1){
@@ -168,7 +166,7 @@ $(document).ready(function () {
     }
     $('#frm').submit();
   });
-
+// input태그의 모든 값이 들어있는지 체크해주는 함수입니다.
   function checkfrm(){
     let formtag = $('.ckinput');
     for(let i=0; i<formtag.length; i++) {
@@ -177,6 +175,32 @@ $(document).ready(function () {
         return -1;
     }
   }
+  //아이디체크 이벤트를 비동기로 진행합니다.
+  $('#idcheck').click(function() {
+	  let bid = $('#id').val();
+	  if(!bid)
+		  return;
+	  
+		$.ajax({
+			url: '/YummyMap/join/idCheck.mmy',
+			type: 'post',
+			dataType: 'json',
+			data: {
+				'id': bid
+			},
+			success: function(data){
+				let str = data.result;
+				if(str == 'ok') {
+					$('#idmsg2').text('사용가능한 아이디입니다.');
+					$('#idmsg2').attr('class', 'text-primary' );
+				} else {
+					$('#idmsg2').text('이미 사용된 아이디입니다.');					
+					$('#idmsg2').attr('class', 'text-danger' );
+				}
+					$('#idmsg2').show();
+			}
+		});
+  });
 });
 </script>
 </html>

@@ -76,4 +76,25 @@ ResultSet rs;
 		}
 		return cnt;
 	}
+	
+	//아이디 중복체크를 확인해주는 메소드입니다.
+	public int idCheck(String id) {
+		int cnt = 0;
+		con = db.getConnection();
+		String sql = jsql.getSQL(jsql.ID_CHECK);
+		pstmt = db.getPreparedStatement(con, sql);
+		try {
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			rs.next();
+			cnt = rs.getInt("cnt");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
+		}
+		return cnt;
+	}
 }

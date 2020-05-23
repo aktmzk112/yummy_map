@@ -117,5 +117,7 @@ svg {
     width: 24px;
 }
 
+dnone{display: none;}
+
 .main-body {position: absolute; width: 1050px; top: 210px; left: 430px;}
 .b-subtitle{position: absolute; top: 220px; left: 222px; width: 200px; height: 70px; font-size: 20pt; color: rgb(248, 187, 168);}
