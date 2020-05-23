@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="/YummyMap/css/main_1.css" />
+    <link rel="stylesheet" href="/YummyMap/css/nav.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -47,7 +48,7 @@
                 </div>
             </div>
         </div>
-        <a class="navbar-brand tcolor logo" href="#" id="">
+        <a class="navbar-brand tcolor logo" href="/YummyMap/main.mmy">
             YUMMY MAP
         </a>
         <div class=" nav-item-1 d-flex justify-content-end">
@@ -472,6 +473,10 @@ $(document).ready(function () {
   //게임네브버튼 이벤트 입니다.
     $('#game').click(function(){
     	$(location).attr('href', '/YummyMap/game/game.mmy');
+    });
+  //로그인버튼 이벤트 입니다.
+    $('#login').click(function(){
+    	$(location).attr('href', '/YummyMap/join/login.mmy');
     });
     
     

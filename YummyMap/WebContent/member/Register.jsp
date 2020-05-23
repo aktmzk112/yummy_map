@@ -6,7 +6,7 @@
   <meta charset="utf-8">
 <link rel="stylesheet" href="/YummyMap/css/member/register.css">
 <link rel="stylesheet" href="/YummyMap/css/w3.css">
-
+<link rel="stylesheet" href="/YummyMap/css/nav.css">
 <link rel="stylesheet" href="/YummyMap/css/bootstrap.min.css">
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -18,211 +18,167 @@
 
 </style>
 <body>
-  <div class="">
-    <div class="container border  all-mar all-wid" style="width: 600px">
-      <div class="text-center">
-      <img class="img" src="./img/logo_ex.png">
-    </div>
-    <br>
-    <h2 class="login text-right mr-5"> 회원가입하기</h2>
-    <br>
-    <div class="ml-5 body-wid ">
-        <h5 class="input-tit-mar">아이디  </h5>
-        <input type="text" class="input-wid">
-        <br><br>
-        <h5 class="input-tit-mar2">비밀번호  </h5>
-        <input type="text" class="input-wid">
-        <br><br>
-        <h5 class="input-tit-mar2">비밀번호 재입력 </h5>
-        <input type="text" class="input-wid">
-        <h6 class="title-mar">비밀번호가 일치합니다.</h6>  
-        <br>
-        <h5 class="">휴대폰 번호 입력  </h5>
-          <div class="btn-group">
-            <button type="button" class="btn btn-secondary dropdown-toggle btn-wid" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">010</button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divivder"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
+<!-- nav 영역입니다-->
+<div class="bg-white border-bottom fixed-top nav-body">
+  <div class=" mt-2 nav-btn">
+      <div class="member_nav text-right mt-3">
+          <div class="ctQZg">
+              <div class="_47KiJ">
+                  <div class="XrOey"><a class="_0ZPOP kIKUG _4700r " href="#"><svg aria-label="활동 피드"
+                              class="_8-yf5 " fill="#262626" height="24" viewBox="0 0 48 48" width="24">
+                              <path
+                                  d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z">
+                              </path>
+                          </svg></a>
+                      <div class="_0Sl_t">
+                          <div class="poA5q" style="margin-left: -423px;"></div>
+                      </div>
+                  </div>
+                  <div class="XrOey"><a href="#"><svg aria-label="프로필" class="_8-yf5 " fill="#262626" height="24"
+                              viewBox="0 0 48 48" width="24">
+                              <path
+                                  d="M24 26.7c7.4 0 13.4-6 13.4-13.4S31.4 0 24 0 10.6 6 10.6 13.4s6 13.3 13.4 13.3zM24 3c5.7 0 10.4 4.6 10.4 10.4S29.7 23.7 24 23.7s-10.4-4.6-10.4-10.4S18.3 3 24 3zm9.1 27.1H14.9c-7.4 0-13.4 6-13.4 13.4v3c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5v-3c0-5.7 4.6-10.4 10.4-10.4h18.3c5.7 0 10.4 4.6 10.4 10.4v3c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5v-3c-.1-7.4-6.1-13.4-13.5-13.4z">
+                              </path>
+                          </svg></a></div>
               </div>
-              &nbsp;&nbsp;&nbsp;
-            <h5> - </h5>
-            &nbsp;&nbsp;
-             <input type="text" class="" style="width: 150px;">
-             &nbsp;&nbsp;
-            <h5> - </h5>
-            &nbsp;&nbsp;
-            <input type="text" class="" style="width: 150px;">
+              <!-- <a href="#" class="badge badge-light nav-item" id="join">Join</a>-->
+              <a href="#" class="badge badge-light nav-item" id="login">LOGIN</a>
+              <a href="#" class="badge badge-light nav-item" id="logout">LOGOUT</a>
           </div>
       </div>
-      <br>
-
-      <h5 class="ml-5 body-wid">이메일 주소 입력  </h5>
-        <input type="text" class="" style="margin-left: 45px; width: 180px;">
-        @
-
-            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 150px;">
-              gmail.com
-            </button>
-
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-
-          <button type="button" class="btn btn-info ">인증메일받기</button>
-     <br>
-     <br>
-     <h5 class="ml-5 body-wid" >이메일 인증번호 입력  </h5>
-     <input type="text" class="input-wid" style="margin-left: 45px;">
-        <div>
-          <br>
-          <h5 class="ml-5 body-wid">생년월일 입력  </h5>
-          <div style="margin-left: 45px;">
-                  <select id="birth" style="width: 140px;">
-                    <option value="#">연도</option>
-                    <option value="1950">1950</option>
-                    <option value="1951">1951</option>
-                    <option value="1952">1952</option>
-                    <option value="1953">1953</option>
-                    <option value="1954">1954</option>
-                    <option value="1955">1955</option>
-                    <option value="1956">1956</option>
-                    <option value="1957">1957</option>
-                    <option value="1958">1958</option>
-                    <option value="1959">1959</option>
-                    <option value="1960">1960</option>
-                    <option value="1961">1961</option>
-                    <option value="1962">1962</option>
-                    <option value="1963">1963</option>
-                    <option value="1964">1964</option>
-                    <option value="1965">1965</option>
-                    <option value="1966">1966</option>
-                    <option value="1967">1967</option>
-                    <option value="1968">1968</option>
-                    <option value="1969">1969</option>
-                    <option value="1970">1970</option>
-                    <option value="1971">1971</option>
-                    <option value="1972">1972</option>
-                    <option value="1973">1973</option>
-                    <option value="1974">1974</option>
-                    <option value="1975">1975</option>
-                    <option value="1976">1976</option>
-                    <option value="1977">1977</option>
-                    <option value="1978">1978</option>
-                    <option value="1979">1979</option>
-                    <option value="1980">1980</option>
-                    <option value="1981">1981</option>
-                    <option value="1982">1982</option>
-                    <option value="1983">1983</option>
-                    <option value="1984">1984</option>
-                    <option value="1985">1985</option>
-                    <option value="1986">1986</option>
-                    <option value="1987">1987</option>
-                    <option value="1988">1988</option>
-                    <option value="1989">1989</option>
-                    <option value="1990">1990</option>
-                    <option value="1991">1991</option>
-                    <option value="1992">1992</option>
-                    <option value="1993">1993</option>
-                    <option value="1994">1994</option>
-                    <option value="1995">1995</option>
-                    <option value="1996">1996</option>
-                    <option value="1997">1997</option>
-                    <option value="1998">1998</option>
-                    <option value="1999">1999</option>
-                    <option value="2000">2000</option>
-                    <option value="2001">2001</option>
-                    <option value="2002">2002</option>
-                    <option value="2003">2003</option>
-                    <option value="2004">2004</option>
-                    <option value="2005">2005</option>
-                    <option value="2006">2006</option>
-                    <option value="2007">2007</option>
-                    <option value="2008">2008</option>
-                    <option value="2009">2009</option>
-                    <option value="2010">2010</option>
-                    <option value="2011">2011</option>
-                    <option value="2012">2012</option>
-                    <option value="2013">2013</option>
-                    <option value="2014">2014</option>
-                    <option value="2015">2015</option>
-                    <option value="2016">2016</option>
-                    <option value="2017">2017</option>
-                    <option value="2018">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                </select> <span style="font-size: 18px;"> 년</span> <select id="생년월일" style="width: 140px;">
-                    <option value="#">월</option>
-                    <option value="1">1월</option>
-                    <option value="2">2월</option>
-                    <option value="3">3월</option>
-                    <option value="4">4월</option>
-                    <option value="5">5월</option>
-                    <option value="6">6월</option>
-                    <option value="7">7월</option>
-                    <option value="8">8월</option>
-                    <option value="9">9월</option>
-                    <option value="10">10월</option>
-                    <option value="11">11월</option>
-                    <option value="12">12월</option>
-                </select> <span style="font-size: 18px;"> 월 </span> <select id="생년월일" style="width: 140px;">
-                    <option value="#">일</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                    <option value="31">31</option>
-                </select>
-              </div>
-              <br>
-              <div style="margin-left: 45px;">
-                <div>
-                <button type="button" class="btn btn-primary " style="width: 232px;">회원가입</button>
-                <button type="button" class="btn btn-primary " style="width: 232px;">홈으로</button>
-                </div>
-                <br>
-                <div>
-                  <button type="button" class="btn btn-success btn3-wid">Naver 계정으로 회원가입</button>
-                </div>
-                <br>
-                <div>
-                  <button type="button" class="btn btn-warning btn3-wid" >Kaokao 계정으로 회원가입</button>
-                </div>
-              </div>
-             </div>
+  </div>
+  <a class="navbar-brand tcolor logo" href="/YummyMap/main.mmy" >
+      YUMMY MAP
+  </a>
+  <div class="b-subtitle text-left"><p class="pt-3">회원가입</p></div>
+  <div class=" nav-item-1 d-flex justify-content-end">
+      <a class="navbar-brand nav-item-size" href="#" id="">
+          <i class="fas fa-gamepad"></i>
+      </a>
+      <a class="navbar-brand nav-item-size" href="#">
+          <i class="far fa-clipboard"></i>
+      </a>
+  </div>
+  <div class="linkbox">
+    <div>
+      <a href="#linkstr" type="button" class="linkbtn border-bottom text-success">네이버 계정 사용하기</a>
+    </div>
+    <div>
+      <a href="#linkstr" type="button" class="linkbtn border-bottom text-warning">카카오 계정 사용하기</a>
+    </div>
+  </div>
+</div>
+<!-- nav 마지막 입니다-->
+<!-- body 시작 입니다-->
+  <div class="main-body mb-5">
+    <div class="m-box mt-4">
+      <form id="frm" action="/YummyMap/join/joinProc.mmy" method="POST">
+        <div class="form-group">
+          <label for="id" class="idlabel mr-2 d-inline-block">아이디</label>
+          <button type="button" class="btn btn-secondary btn-sm d-inline-block mb-1">아이디 체크</button>
+          <input type="text" class="form-control ckinput" id="id" name="id">
+          <small id="idmsg" class="text-danger">아이디 패턴을 확인해주세요</small>
         </div>
-  </div>  
+        <div class="form-group">
+          <label for="pw">비밀번호</label>
+          <input type="password" class="form-control ckinput" id="pw" name="pw">
+          <small id="pwmsg" class="text-danger">비밀번호 패턴을 확인해주세요</small>
+        </div>
+        <div class="form-group">
+          <label for="repw">비밀번호 재입력</label>
+          <input type="password" class="form-control ckinput" id="repw">
+          <small id="pwmsg" class="text-danger">비밀번호가 일치하지 않습니다</small>
+        </div>
+        <div class="form-group">
+          <label for="repw">이름</label>
+          <input type="text" class="form-control ckinput" id="name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="id" class="idlabel mr-2 d-inline-block">주민번호</label>
+          <div class="d-flex">
+            <input type="text" class="form-control ckinput" name="birth" id="birth" placeholder="생년월일 6자리">
+            <p>-</p>
+            <div class="border rounded-sm d-flex b-box">
+              <input type="text" class="form-control border-0 ckinput pid2" name="gen" id="gen" maxlength="1">
+              <p class="form-control border-0 bg-white ml-1"  id="pid1">******</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="telmid">휴대전화</label>
+          <div class="d-flex">
+            <select class="form-control" name="teltop">
+              <option value="010">010</option>
+              <option value="011">011</option>
+              <option value="017">017</option>
+              <option value="019">019</option>
+            </select>
+            <p>-</p>
+            <input type="text" class="form-control ckinput" id="telmid" name="telmid">
+            <p>-</p>
+            <input type="text" class="form-control ckinput" id="telend" name="telend">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email1" class="idlabel mr-2 d-inline-block">이메일</label>
+          <button type="button" class="btn btn-secondary btn-sm d-inline-block mb-1">이메일 인증</button>
+          <div class="d-flex">
+            <input type="text" class="form-control ckinput" id="email1" name="email1">
+            <p>@</p>
+            <select class="form-control" id="email2" name="email2">
+              <option value="@naver.com">naver.com</option>
+              <option value="@gmail.com">gmail.com</option>
+              <option value="@hanmir.com">hanmir.com</option>
+              <option value="@nate.com">nate.com</option>
+              <option value="@korea.com">korea.com</option>
+              <option value="" >직접입력</option>
+            </select>
+          </div>
+          <small id="pwmsg" class="text-danger">이메일 인증을 진행해주세요</small>
+        </div>
+      </form>
+      <div class="btn-box">
+        <div class="mt-5">
+          <button type="button" class="btn btn-primary joinbtn" id="joinbtn">회원 가입 완료</button>
+        </div>
+        <div class="optionbox d-flex mt-5" id="linkstr">
+          <p class="h5" >다른 계정으로 가입을 원하신다면</p>
+        </div>
+        <div class=" mt-1">
+          <button type="button" class="btn btn-success naverbtn">네이버 계정으로 가입하기</button>
+        </div>
+        <div class="mt-1">
+          <button type="button" class="btn btn-warning kakaobtn">카카오 계정으로 가입하기</button>
+        </div>
+        <div class="mt-1">
+          <a  href="/YummyMap/main.mmy" class="btn btn-secondary homebtn ">홈화면 가기</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- body 마지막 입니다-->
+</body>
+<script type="text/javascript">
+$(document).ready(function () {
+  $('#joinbtn').click(function(){
+    let result = checkfrm();
+    if(result == -1){
+      alert('모든 입력을 완료해주세요');
+      return;
+    }
+    $('#frm').submit();
+  });
+
+  function checkfrm(){
+    let formtag = $('.ckinput');
+    for(let i=0; i<formtag.length; i++) {
+      let tagval = $(formtag[i]).val();
+      if(!tagval)
+        return -1;
+    }
+  }
+});
+</script>
+</html>
 </body>
 </html>

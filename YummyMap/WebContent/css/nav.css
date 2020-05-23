@@ -21,7 +21,7 @@ code {
     position: absolute;
     top: 40px;
     left: 215px;
-    font-size: 25pt;
+    font-size: 25pt !important;
     font-weight: bold;
     margin-top: 20px;
 }

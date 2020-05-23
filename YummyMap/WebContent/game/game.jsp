@@ -10,11 +10,11 @@
 	<link rel="stylesheet" href="/YummyMap/css/admin/base.css">
 	<link rel="stylesheet" href="/YummyMap/css/nav.css">
 	<link rel="stylesheet" href="/YummyMap/css/game/game.css">
-	<link rel="stylesheet" href="/YummyMap/css/nav.css">
 	<script type="text/javascript" src="/YummyMap/js/jquery-3.5.0.min.js"></script>
 	<script type="text/javascript" src="/YummyMap/js/game/Winwheel.js"></script>
+	<script type="text/javascript" src="/YummyMap/js/bootstrap.bundle.min.js"></script>
+	<script defer type="text/javascript" src="/YummyMap/js/game/game.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-	<script type="text/javascript" src="/YummyMap/js/game/game.js"></script>
 	
 	<title>게임 화면</title>
 	<style>
@@ -85,50 +85,61 @@
             
         </div>
     </div>
+    <div class="dnone" id="selbox2">
+        <div class="d-flex">
+            <p>선택된 메뉴</p>
+            <p class="pl-2 text-primary" id="selectedStr"></p>
+        </div>
+        <div class="cate alert alert-light d-flex flex-wrap justify-content-center" id="itemBox2">
+            
+        </div>
+    </div>
     <div class="mt-5">
         <p>게임시작</p>
     </div>
     <div class="d-flex">
         <div class="panbox border">
-    
+           <div id="canvasContainer" class="">
+	            <img id="prizePointer" src="/YummyMap/img/game/basic_pointer.png" alt="V" />
+	            <canvas id='canvas' width='500' height='340'>
+	                
+	            </canvas>
+           </div>
         </div>
     </div>
     <div class="mt-2 mb-5 btnbox text-center">
-        <button type="button" class="btn btn-primary btnw">시작</button>
-        <button type="button" class="btn btn-secondary btnw">초기화</button>
+        <button type="button" class="btn btn-primary btnw" id="start">시작</button>
+        <button type="button" class="btn btn-secondary btnw" id="refresh">초기화</button>
     </div>
 
 </div>
 <!-- body 마지막 입니다-->
+<!-- modal page 입니다-->
+<div class="modal" tabindex="-1" role="dialog" id="result">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">오늘의 메뉴 딱 골라줘</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="mbody">
+        
+      </div>
+      <div class="modal-footer">
+      <div class="d-flex row">
+      	<p class="pr-3 text-muted h5">담아둔 메뉴로 다시 하려면</p>
+        <button type="button" class="btn btn-secondary" id="m-replay">클릭</button>
+      </div>
+      <div class="d-flex">
+      	<p class="pr-3 text-muted h5">처음부터 다시하려면</p>
+        <button type="button" class="btn btn-secondary" id="m-refresh">클릭</button>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal page 마지막 입니다-->
 </body>
-<script type="text/javascript">
-$(document).ready(function () {
-    let cate = new Array();
-    let item;
-    $('.cate-item').click(function(){
-        item = $(this).text().substring(1);
-        getItems();
-    });
-
-let getItems = function() {
-	$.ajax({
-        url:'/YummyMap/game/gameItem.mmy',
-        type:'post',
-        dataType:'json',
-        data:{
-            'cate':item
-        },
-        success:function(data){
-            let obj = data.items;
-            for(let i=0; i<obj.length; i++) {
-                let getItem = obj[i];
-                $('#itemBox').append('<p class="pr-4 item-h getItem" href="">#'+getItem+'</p>');
-            }
-            $('#selbox').slideDown(100);
-        }
-    });
-}
-				
-});
-</script>
 </html>
