@@ -65,8 +65,6 @@ ResultSet rs;
 			pstmt.setString(3, vo.getPw());
 			pstmt.setString(4, vo.getTel());
 			pstmt.setString(5, vo.getMail());
-			pstmt.setString(6, vo.getBirth());
-			pstmt.setString(7, vo.getGen());
 			cnt = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

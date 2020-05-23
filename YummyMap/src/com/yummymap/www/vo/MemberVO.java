@@ -5,7 +5,7 @@ import java.text.*;
 
 public class MemberVO {
 	int mno;
-	String name, id, pw, tel, mail, grade, issue, sdate, birth, gen;
+	String name, id, pw, tel, mail, grade, issue, sdate;
 	Date joinDate;
 	Time joinTime;
 	public int getMno() {
@@ -66,19 +66,6 @@ public class MemberVO {
 		SimpleDateFormat f1 = new SimpleDateFormat("yyyy/MM/dd ");
 		SimpleDateFormat f2 = new SimpleDateFormat("HH:mm");
 		this.sdate = f1.format(joinDate) + f2.format(joinTime);
-	}
-	public String getBirth() {
-		return birth;
-	}
-	public void setBirth(String birth) {
-		this.birth = birth;
-	}
-	
-	public String getGen() {
-		return gen;
-	}
-	public void setGen(String gen) {
-		this.gen = gen;
 	}
 	public Date getJoinDate() {
 		return joinDate;

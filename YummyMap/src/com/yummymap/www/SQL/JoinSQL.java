@@ -19,10 +19,10 @@ public class JoinSQL {
 		break;
 		case ADD_MEMB:
 			buff.append("INSERT INTO ");
-			buff.append("	member(mno, mname, mid, mpw, mtel, memail, birth, gen) ");
+			buff.append("	member(mno, mname, mid, mpw, mtel, memail) ");
 			buff.append("VALUES( " );
 			buff.append("	getmno.nextval, ");
-			buff.append("	?,?,?,?,?,TO_DATE(?, 'YY/MM/DD'),?");
+			buff.append("	?,?,?,?,?");
 			buff.append(")");
 			break;
 		case ID_CHECK:

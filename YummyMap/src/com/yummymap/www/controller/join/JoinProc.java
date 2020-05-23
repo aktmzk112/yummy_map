@@ -23,16 +23,7 @@ public class JoinProc implements MmyController {
 		String email1 = req.getParameter("email1");
 		String email2 = req.getParameter("email2");
 		String mail = email1 + email2;
-		String birth = req.getParameter("birth");
-		String gen_ = req.getParameter("gen");
 		String name = req.getParameter("name");
-		int intgen = 2;
-		try {
-			intgen = Integer.parseInt(gen_);
-		} catch (Exception e) {}
-		String gen = "F";
-		if(intgen % 2 == 1) 
-			gen = "M";
 		
 		// VO를 이용하여 db작업을 합니다.
 		MemberVO vo = new MemberVO();
@@ -40,8 +31,6 @@ public class JoinProc implements MmyController {
 		vo.setPw(pw);
 		vo.setTel(tel);
 		vo.setMail(mail);
-		vo.setBirth(birth);
-		vo.setGen(gen);
 		vo.setName(name);
 		int cnt = new JoinDAO().joinNewMember(vo);
 		String view = "";

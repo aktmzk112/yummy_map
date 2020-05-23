@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="/YummyMap/css/bootstrap.min.css">
 
 <script src="/YummyMap/js/jquery-3.5.0.min.js"></script>
+<script src="/YummyMap/js/member/register.js"></script>
 
 </head>
 <style>
@@ -73,33 +74,24 @@
           <label for="id" class="idlabel mr-2 d-inline-block">아이디</label>
           <button type="button" id="idcheck" class="btn btn-secondary btn-sm d-inline-block mb-1">아이디 체크</button>
           <input type="text" class="form-control ckinput" id="id" name="id">
-          <small id="idmsg1" class="text-danger dnone">아이디 패턴을 확인해주세요</small>
-          <small id="idmsg2" class="dnone"></small>
+          <small id="idmsg" class="text-secondary d-block">첫글자 영문자, 영문자 혹은 숫자 조합 5~13자리 입력</small>
+          <small id="idmsg1" class="dnone d-block"></small>
+          <small id="idmsg2" class="dnone d-block"></small>
         </div>
         <div class="form-group">
           <label for="pw">비밀번호</label>
           <input type="password" class="form-control ckinput" id="pw" name="pw">
-          <small id="pwmsg" class="text-danger">비밀번호 패턴을 확인해주세요</small>
+          <small id="pwmsg" class="text-secondary d-block">첫글자 영문자, 영문+숫자+특수문자 조합 8~15자리 입력</small>
+          <small id="pwmsg1" class="text-danger">비밀번호 패턴을 확인해주세요</small>
         </div>
         <div class="form-group">
           <label for="repw">비밀번호 재입력</label>
           <input type="password" class="form-control ckinput" id="repw">
-          <small id="pwmsg" class="text-danger">비밀번호가 일치하지 않습니다</small>
+          <small id="repwmsg" class="dnone"></small>
         </div>
         <div class="form-group">
           <label for="repw">이름</label>
           <input type="text" class="form-control ckinput" id="name" name="name">
-        </div>
-        <div class="form-group">
-          <label for="id" class="idlabel mr-2 d-inline-block">주민번호</label>
-          <div class="d-flex">
-            <input type="text" class="form-control ckinput" name="birth" id="birth" placeholder="생년월일 6자리">
-            <p>-</p>
-            <div class="border rounded-sm d-flex b-box">
-              <input type="text" class="form-control border-0 ckinput pid2" name="gen" id="gen" maxlength="1">
-              <p class="form-control border-0 bg-white ml-1"  id="pid1">******</p>
-            </div>
-          </div>
         </div>
         <div class="form-group">
           <label for="telmid">휴대전화</label>
@@ -154,55 +146,5 @@
     </div>
   </div>
 <!-- body 마지막 입니다-->
-</body>
-<script type="text/javascript">
-$(document).ready(function () {
-// 완료버튼 클릭시 이벤트를 진행합니다.
-  $('#joinbtn').click(function(){
-    let result = checkfrm();
-    if(result == -1){
-      alert('모든 입력을 완료해주세요');
-      return;
-    }
-    $('#frm').submit();
-  });
-// input태그의 모든 값이 들어있는지 체크해주는 함수입니다.
-  function checkfrm(){
-    let formtag = $('.ckinput');
-    for(let i=0; i<formtag.length; i++) {
-      let tagval = $(formtag[i]).val();
-      if(!tagval)
-        return -1;
-    }
-  }
-  //아이디체크 이벤트를 비동기로 진행합니다.
-  $('#idcheck').click(function() {
-	  let bid = $('#id').val();
-	  if(!bid)
-		  return;
-	  
-		$.ajax({
-			url: '/YummyMap/join/idCheck.mmy',
-			type: 'post',
-			dataType: 'json',
-			data: {
-				'id': bid
-			},
-			success: function(data){
-				let str = data.result;
-				if(str == 'ok') {
-					$('#idmsg2').text('사용가능한 아이디입니다.');
-					$('#idmsg2').attr('class', 'text-primary' );
-				} else {
-					$('#idmsg2').text('이미 사용된 아이디입니다.');					
-					$('#idmsg2').attr('class', 'text-danger' );
-				}
-					$('#idmsg2').show();
-			}
-		});
-  });
-});
-</script>
-</html>
 </body>
 </html>
