@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -50,7 +51,7 @@
 
 					<form action="" method="POST" id="frm">
 						<input type="hidden" name="mno" value="${MNO}">
-						<input type="hidden" name="nowPage" value="${MNO}">
+						<input type="hidden" name="nowPage" id="nowPage" value="${param.nowpage}">
 						<div class="mt-4 row ml-1">
 							<h5 class="in-bl text-left ml-2 col-3 mt-1">이름</h5>
 							<input class="col-6 form-control border-b margin-name text-center"  type="text" id="name" name="name" value="${MVO.mname }">
@@ -86,7 +87,13 @@
 						</div>
 							<div class="row  mt-3 d-flex justify-content-center">
 								<div>
+									<c:if test="${MVO.issue ne 'O' }">
 									<input class="mr-2" type="checkbox"  name="issue" value="ok">악성회원
+									</c:if>
+									<c:if test="${MVO.issue eq 'O' }">
+									<input class="mr-2" type="checkbox"  name="issue" value="ok" checked>악성회원
+									</c:if>
+	
 								</div>
 				
 								</div>

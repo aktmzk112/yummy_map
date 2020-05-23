@@ -15,6 +15,7 @@ public class AdminSQL {
  public final int USER_NAME_CNT = 2003;
  
  public final int USER_RE = 3001;
+ public final int USER_RE_NOPASS = 3002;
  public String getSQL(int code) {
 	 StringBuffer buff = new StringBuffer();
 	 
@@ -48,7 +49,6 @@ public class AdminSQL {
 		 buff.append("        member "); 
 		 buff.append("    WHERE "); 
 		 buff.append("        grade = 'M' "); 
-		 buff.append("    and isshow = 'Y' "); 
 		 buff.append("  )  "); 
 		 buff.append("WHERE "); 
 		 buff.append("    rno BETWEEN ? and ? ");
@@ -63,7 +63,6 @@ public class AdminSQL {
 		 buff.append("        member "); 
 		 buff.append("    WHERE "); 
 		 buff.append("        grade = 'M' "); 
-		 buff.append("    and isshow = 'Y' "); 
 		 buff.append("  )  "); 
 		 buff.append("WHERE "); 
 		 buff.append("    rno BETWEEN ? and ? ");
@@ -79,7 +78,6 @@ public class AdminSQL {
 		 buff.append("        member "); 
 		 buff.append("    WHERE "); 
 		 buff.append("        grade = 'M' "); 
-		 buff.append("    and isshow = 'Y' "); 
 		 buff.append("  )  "); 
 		 buff.append("WHERE "); 
 		 buff.append("    rno BETWEEN ? and ? ");
@@ -92,7 +90,6 @@ public class AdminSQL {
 		 buff.append("    member "); 
 		 buff.append("WHERE "); 
 		 buff.append("    grade = 'M' "); 
-		 buff.append("    and isshow = 'Y' ");
 		 break;
 	 case USER_ID_CNT: 
 		 buff.append("SELECT  "); 
@@ -101,7 +98,6 @@ public class AdminSQL {
 		 buff.append("    member "); 
 		 buff.append("WHERE "); 
 		 buff.append("    grade = 'M' "); 
-		 buff.append("    and isshow = 'Y' ");
 		 buff.append("    and mid = ? ");
 		 break;
 	 case USER_NAME_CNT: 
@@ -111,24 +107,30 @@ public class AdminSQL {
 		 buff.append("    member "); 
 		 buff.append("WHERE "); 
 		 buff.append("    grade = 'M' "); 
-		 buff.append("    and isshow = 'Y' ");
 		 buff.append("    and mname = ? ");
 		 break;
 	 case USER_INFO : 
 		 buff.append("SELECT  "); 
-		 buff.append("    mno , mname , mid, mtel ,memail "); 
+		 buff.append("    mno , mname , mid, mtel ,memail ,issue "); 
 		 buff.append("FROM  "); 
 		 buff.append("    member "); 
 		 buff.append("WHERE "); 
 		 buff.append("    grade = 'M' "); 
-		 buff.append("    and isshow = 'Y' ");
 		 buff.append("    and mno = ? ");
 		 break;	 
 	 case USER_RE:
 		 buff.append("UPDATE  "); 
 		 buff.append("    member  "); 
 		 buff.append("SET "); 
-		 buff.append("    mname = ? , mpw= ? , mtel= ? , memail= ?, issue= ? "); 
+		 buff.append("    mname = ? , mpw= ? , mtel= ? , memail= ?, issue= ? ,isshow=? "); 
+		 buff.append("WHERE "); 
+		 buff.append("    mno= ? ");
+		 break;
+	 case USER_RE_NOPASS:
+		 buff.append("UPDATE  "); 
+		 buff.append("    member  "); 
+		 buff.append("SET "); 
+		 buff.append("    mname = ? , mtel= ? , memail= ?, issue= ? ,isshow=? "); 
 		 buff.append("WHERE "); 
 		 buff.append("    mno= ? ");
 		 break;

@@ -8,7 +8,7 @@ import java.sql.*;
 import java.text.*;
 public class MemberInfoVO {
 	private int mno;
-	private String mname, mid ,pass, mtel , memail, sdate, mdomain , issue;
+	private String mname, mid ,pass, mtel , memail, sdate, mdomain , issue ,isshow;
 	private Date jDate;
 	private Time jTime;
 	
@@ -58,6 +58,13 @@ public class MemberInfoVO {
 	}
 	public void setIssue(String issue) {
 		this.issue = issue;
+	}
+	
+	public String getIsshow() {
+		return isshow;
+	}
+	public void setIsshow(String isshow) {
+		this.isshow = isshow;
 	}
 	public void setMemail(String memail) {
 		this.memail = memail;

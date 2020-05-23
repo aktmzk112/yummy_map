@@ -258,6 +258,7 @@ public class AdminDAO {
 			String domin = mail.substring(mail.indexOf("@")+1);
 			mvo.setMemail(idMail);
 			mvo.setMdomain(domin);
+			mvo.setIssue(rs.getString("issue").equals("X") ? "O": "");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -283,6 +284,34 @@ public class AdminDAO {
 			pstmt.setString(3, mvo.getMtel());
 			pstmt.setString(4, mvo.getMemail());
 			pstmt.setString(5, mvo.getIssue());
+			pstmt.setString(6, mvo.getIsshow());
+			pstmt.setInt(7, mvo.getMno());
+			cnt = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			db.close(pstmt);
+			db.close(con);
+		}
+		
+		return cnt;
+	}
+	//회원 수정 전담 함수(패스워드 미 수정)
+	public int reMemberNopass(MemberInfoVO mvo) {
+		int cnt = 0;
+		con = db.getConnection();
+		
+		String sql = asql.getSQL(asql.USER_RE_NOPASS);
+		
+		pstmt = db.getPreparedStatement(con, sql);
+		
+		try {
+			pstmt.setString(1, mvo.getMname());
+			pstmt.setString(2, mvo.getMtel());
+			pstmt.setString(3, mvo.getMemail());
+			pstmt.setString(4, mvo.getIssue());
+			pstmt.setString(5, mvo.getIsshow());
 			pstmt.setInt(6, mvo.getMno());
 			cnt = pstmt.executeUpdate();
 			
