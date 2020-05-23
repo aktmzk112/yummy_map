@@ -137,6 +137,18 @@ $(function(){
 			return;
 		}
 		
+		let domain = $('#domain').val();
+		let domaincks = domainck(domain);
+		if(!domaincks){
+			$('.modal-body').text('메일 도메인을 확인하세요');
+			$('#staticBackdrop').modal();
+			return;
+		}
+		
+		$('#frm').attr('action','/YummyMap/admin/rememberProc.mmy');
+		$('#frm').submit();
+		
+		
 	});
 	
 

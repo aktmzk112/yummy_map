@@ -13,6 +13,8 @@ public class AdminSQL {
  public final int USER_CNT = 2001;
  public final int USER_ID_CNT = 2002;
  public final int USER_NAME_CNT = 2003;
+ 
+ public final int USER_RE = 3001;
  public String getSQL(int code) {
 	 StringBuffer buff = new StringBuffer();
 	 
@@ -29,7 +31,7 @@ public class AdminSQL {
 		 break;
 	 case SEL_ALL_USER : 
 		 buff.append("SELECT  "); 
-		 buff.append("    mno , mname , mid, mtel ,memail "); 
+		 buff.append("    mno , mname , mid, mtel ,memail ,issue"); 
 		 buff.append("FROM  "); 
 		 buff.append("    member "); 
 		 buff.append("WHERE "); 
@@ -38,10 +40,10 @@ public class AdminSQL {
 		 break;
 	 case SEL_USER : 
 		 buff.append("select "); 
-		 buff.append("    rno , mno , mid , mname, mtel , memail  "); 
+		 buff.append("    rno , mno , mid , mname, mtel , memail ,issue "); 
 		 buff.append("from "); 
 		 buff.append(" (SELECT  "); 
-		 buff.append("        rownum rno , mno , mid , mname , mtel, memail "); 
+		 buff.append("        rownum rno , mno , mid , mname , mtel, memail, issue "); 
 		 buff.append("    FROM  "); 
 		 buff.append("        member "); 
 		 buff.append("    WHERE "); 
@@ -53,10 +55,10 @@ public class AdminSQL {
 		 break;
 	 case SEL_ID_USER : 
 		 buff.append("select "); 
-		 buff.append("    rno , mno , mid , mname, mtel , memail  "); 
+		 buff.append("    rno , mno , mid , mname, mtel , memail ,issue "); 
 		 buff.append("from "); 
 		 buff.append(" (SELECT  "); 
-		 buff.append("        rownum rno , mno , mid , mname , mtel, memail "); 
+		 buff.append("        rownum rno , mno , mid , mname , mtel, memail,issue "); 
 		 buff.append("    FROM  "); 
 		 buff.append("        member "); 
 		 buff.append("    WHERE "); 
@@ -69,10 +71,10 @@ public class AdminSQL {
 		 break;
 	 case SEL_NAME_USER : 
 		 buff.append("select "); 
-		 buff.append("    rno , mno , mid , mname, mtel , memail  "); 
+		 buff.append("    rno , mno , mid , mname, mtel , memail, issue  "); 
 		 buff.append("from "); 
 		 buff.append(" (SELECT  "); 
-		 buff.append("        rownum rno , mno , mid , mname , mtel, memail "); 
+		 buff.append("        rownum rno , mno , mid , mname , mtel, memail, issue "); 
 		 buff.append("    FROM  "); 
 		 buff.append("        member "); 
 		 buff.append("    WHERE "); 
@@ -122,7 +124,14 @@ public class AdminSQL {
 		 buff.append("    and isshow = 'Y' ");
 		 buff.append("    and mno = ? ");
 		 break;	 
-	 
+	 case USER_RE:
+		 buff.append("UPDATE  "); 
+		 buff.append("    member  "); 
+		 buff.append("SET "); 
+		 buff.append("    mname = ? , mpw= ? , mtel= ? , memail= ?, issue= ? "); 
+		 buff.append("WHERE "); 
+		 buff.append("    mno= ? ");
+		 break;
 	 }
 	 return buff.toString();
 	 

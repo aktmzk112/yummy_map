@@ -26,7 +26,7 @@ public class Main implements MmyController {
 		String spage = req.getParameter("nowpage");
 		String sch = req.getParameter("searchs");
 		String opt = req.getParameter("opts");
-		System.out.println("검색 옵션 : " + opt + "검색 타이들 : " + sch);
+//		System.out.println("검색 옵션 : " + opt + "검색 타이들 : " + sch);
 		
 			try {
 				nowpage = Integer.parseInt(spage);

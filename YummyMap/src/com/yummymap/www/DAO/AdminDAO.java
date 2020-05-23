@@ -67,6 +67,7 @@ public class AdminDAO {
 				mvo.setMid(rs.getString("mid"));
 				mvo.setMtel(rs.getString("mtel"));
 				mvo.setMemail(rs.getString("memail"));
+				mvo.setIssue(rs.getString("issue").equals("X") ? "O": "");
 				list.add(mvo);
 			}
 		} catch (Exception e) {
@@ -163,6 +164,7 @@ public class AdminDAO {
 				mvo.setMid(rs.getString("mid"));
 				mvo.setMtel(rs.getString("mtel"));
 				mvo.setMemail(rs.getString("memail"));
+				mvo.setIssue(rs.getString("issue").equals("X") ? "O": "");
 				list.add(mvo);
 			}
 		} catch (Exception e) {
@@ -192,6 +194,8 @@ public class AdminDAO {
 				mvo.setMid(rs.getString("mid"));
 				mvo.setMtel(rs.getString("mtel"));
 				mvo.setMemail(rs.getString("memail"));
+				mvo.setIssue(rs.getString("issue").equals("X") ? "O": "");
+				System.out.println("이슈 : " + mvo.getIssue() );
 				list.add(mvo);
 			}
 		} catch (Exception e) {
@@ -262,6 +266,34 @@ public class AdminDAO {
 			db.close(con);
 		}
 		return mvo;
+	}
+	
+	//회원 수정 전담 함수(패스워드 포함)
+	public int reMember(MemberInfoVO mvo) {
+		int cnt = 0;
+		con = db.getConnection();
+		
+		String sql = asql.getSQL(asql.USER_RE);
+		
+		pstmt = db.getPreparedStatement(con, sql);
+		
+		try {
+			pstmt.setString(1, mvo.getMname());
+			pstmt.setString(2, mvo.getPass());
+			pstmt.setString(3, mvo.getMtel());
+			pstmt.setString(4, mvo.getMemail());
+			pstmt.setString(5, mvo.getIssue());
+			pstmt.setInt(6, mvo.getMno());
+			cnt = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			db.close(pstmt);
+			db.close(con);
+		}
+		
+		return cnt;
 	}
 	
 }

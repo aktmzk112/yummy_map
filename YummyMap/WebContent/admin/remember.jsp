@@ -86,7 +86,7 @@
 						</div>
 							<div class="row  mt-3 d-flex justify-content-center">
 								<div>
-									<input class="mr-2" type="checkbox" value="악성회원">악성회원
+									<input class="mr-2" type="checkbox"  name="issue" value="ok">악성회원
 								</div>
 				
 								</div>

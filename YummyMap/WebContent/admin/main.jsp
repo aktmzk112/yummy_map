@@ -60,7 +60,7 @@
 						<div class="col-2">${data.mno}</div>
 						<div class="col-2 mid" >${data.mid }</div>
 						<div class="col-2">${data.mname }</div>
-						<div class="col-2"></div>
+						<div class="col-2">${data.issue }</div>
 						<div class="col-3">
 							<button class="col-5 obtn">수정</button>
 					 		<button class="col-5 btn-danger rbtn" type="button" data-toggle="modal" data-target="#staticBackdrop">삭제</button>
