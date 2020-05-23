@@ -20,10 +20,6 @@ public class RememberProc implements MmyController {
 		String mailid = req.getParameter("mail");
 		String domain = req.getParameter("domain");
 		String issues = req.getParameter("issue");
-		String opts= req.getParameter("opts");
-		System.out.println(opts);
-		String searchs = req.getParameter("searchs");
-		System.out.println(searchs);
 		String mail = mailid + "@" + domain;
 		String issue="N";
 		String isshow="Y";
@@ -75,7 +71,7 @@ public class RememberProc implements MmyController {
 		 }
 	 
 		try {
-			resp.sendRedirect("/YummyMap/admin/main.mmy?nowpage=" + nowpage + "&opts=" +opts +"&searchs=" + searchs);
+			resp.sendRedirect("/YummyMap/admin/main.mmy?nowpage=" + nowpage);
 		} catch (Exception e) {}
 		String view = null;	
 		return view;
