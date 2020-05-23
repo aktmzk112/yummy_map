@@ -16,6 +16,7 @@ public class JoinSQL {
 			buff.append("WHERE ");
 			buff.append("	mid = ? ");
 			buff.append("	AND mpw = ? ");
+			buff.append("	AND isshow = 'Y' AND issue = 'N' ");
 		break;
 		case ADD_MEMB:
 			buff.append("INSERT INTO ");
