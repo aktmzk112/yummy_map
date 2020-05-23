@@ -47,7 +47,7 @@ $(function(){
 	}
 	
 	function phonck(num) {
-		let reg = /^[0-9]{3}[-]{1}[0-9-]{9}$/;
+		let reg = /^[0-9]{3}[-]{1}[0-9]{3,4}[-]{1}[0-9]{4}$/;
 		let ok = reg.test(num);
 		return ok;
 	}

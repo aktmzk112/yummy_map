@@ -21,7 +21,7 @@
 		<input type="hidden" name="mno" id="no" >
 		<input type="hidden" name="nowpage" id="nowpage" value="${PAGE.nowPage }">
 		<input type="hidden" name="searchs" id="searchs" >
-		<input type="hidden" name="opts" id="opts" value="${OPT}">
+		<input type="hidden" name="opts" id="opts">
 	</form>
 	<div class="container mt-1">
 		<nav class="d-flex justify-content-between navbar navbar-light">
@@ -119,7 +119,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-        <button type="button" class="btn btn-danger" id="rokbtn">확인</button>
+        <button type="button" class="btn btn-danger" id="rmbtn">확인</button>
       </div>
     </div>
   </div>

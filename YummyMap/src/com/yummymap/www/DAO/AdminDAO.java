@@ -325,4 +325,25 @@ public class AdminDAO {
 		return cnt;
 	}
 	
+	//계정 삭제 전담 함수 
+	public int delUser(int mno) {
+		int cnt = 0;
+		con = db.getConnection();
+		
+		String sql = asql.getSQL(asql.DEL_UESR);
+		
+		pstmt = db.getPreparedStatement(con, sql);
+		
+		try {
+			pstmt.setInt(1, mno);
+			cnt = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			db.close(pstmt);
+			db.close(con);
+		}
+		return cnt;
+	}
+	
 }

@@ -16,6 +16,8 @@ public class AdminSQL {
  
  public final int USER_RE = 3001;
  public final int USER_RE_NOPASS = 3002;
+ public final int DEL_UESR = 3003;
+ 
  public String getSQL(int code) {
 	 StringBuffer buff = new StringBuffer();
 	 
@@ -131,6 +133,14 @@ public class AdminSQL {
 		 buff.append("    member  "); 
 		 buff.append("SET "); 
 		 buff.append("    mname = ? , mtel= ? , memail= ?, issue= ? ,isshow=? "); 
+		 buff.append("WHERE "); 
+		 buff.append("    mno= ? ");
+		 break;
+	 case DEL_UESR:
+		 buff.append("UPDATE  "); 
+		 buff.append("    member  "); 
+		 buff.append("SET "); 
+		 buff.append("   isshow='N' "); 
 		 buff.append("WHERE "); 
 		 buff.append("    mno= ? ");
 		 break;

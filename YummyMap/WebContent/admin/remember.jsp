@@ -52,6 +52,8 @@
 					<form action="" method="POST" id="frm">
 						<input type="hidden" name="mno" value="${MNO}">
 						<input type="hidden" name="nowPage" id="nowPage" value="${param.nowpage}">
+						<input type="text" name="searchs" id="searchs" value="${param.searchs }">
+						<input type="text" name="opts" id="opts" value="${param.opts}">
 						<div class="mt-4 row ml-1">
 							<h5 class="in-bl text-left ml-2 col-3 mt-1">이름</h5>
 							<input class="col-6 form-control border-b margin-name text-center"  type="text" id="name" name="name" value="${MVO.mname }">

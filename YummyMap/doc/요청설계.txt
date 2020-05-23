@@ -44,6 +44,13 @@
 	파라미터 : name , pw, tel, mail , issue
 	컨트롤러 : /com.yummymap.www.controller.admin.RememberProc
 	뷰		 : /admin/main.mmy (리다이렉트)
+	------------------------------------------------------------------------------
+	
+6. 회원 삭제 처리 요청 
+	요청내용 : /admin/delmemberProc.mmy
+	파라미터 : mno
+	컨트롤러 : /com.yummymap.www.controller.admin.DelmemberProc
+	뷰		 : /admin/main.mmy (리다이렉트)
 	
 	
 	

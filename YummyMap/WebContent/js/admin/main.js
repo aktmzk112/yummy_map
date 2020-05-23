@@ -1,7 +1,13 @@
 $(function(){
+	let mno;
 	$('.obtn').click(function(){
-		var no = $(this).parents().parents().attr('id');
-		alert(no);
+		let no = $(this).parents().parents().attr('id');
+		let sel =	$('#opt').val();
+		alert(sel);
+		let scname = $('#search-input').val();
+		alert(scname);
+		$('#searchs').val(scname);
+		$('#opts').val(sel);
 		$('#no').val(no);
 		$('#frm').attr('action','/YummyMap/admin/remember.mmy');
 		$('#frm').submit();
@@ -21,7 +27,7 @@ $(function(){
 	
 	$('#sbtn').click(function(){
 		let sel =	$('#opt').val();
-		var scname = $('#search-input').val();
+		let scname = $('#search-input').val();
 		if(sel != 'nos' && !scname){
 			alert('검색어를 입력하세요 ! ');
 			$('#search-input').focus();
@@ -35,7 +41,15 @@ $(function(){
 	});
 	
 	$('.rbtn').click(function(){
-		var id = $(this).parents().prevAll('.mid').text();
+		mno = $(this).parents().parents().attr('id');
+		$('#no').val(no);
+		let id = $(this).parents().prevAll('.mid').text();
 		$('.modal-body').html('<b>'+id+'</b> 해당 계정을 정말 삭제 하시겠습니까? ');
+	});
+	
+	$('#rmbtn').click(function(){
+		$('#no').val(mno);
+		$('#frm').attr('action', '/YummyMap/admin/delmemberProc.mmy');
+		$('#frm').submit();
 	});
 });
